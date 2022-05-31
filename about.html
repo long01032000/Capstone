@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pooch Care</title>
+  <link href="//fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/font-awesome.min.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+  <!-- New toolbar -->
+  <style>
+    * {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#DemoBar.demo-bar {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  padding: 40px 5px;
+  padding-top:70px;
+  margin-bottom: 70px;
+  background: #0D1326;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+
+#DemoBar.demo-bar a {
+  display: block;
+  color: #e6ebff;
+  text-decoration: none;
+  line-height: 24px;
+  opacity: .6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#DemoBar.demo-bar span.w3l-icon {
+  display: block;
+}
+
+#DemoBar.demo-bar a:hover {
+  opacity: 1;
+}
+
+#DemoBar.demo-bar .w3l-icon svg {
+  color: #e6ebff;
+}
+#DemoBar.demo-bar .responsive-icons {
+  margin-top: 30px;
+  border-top: 1px solid #41414d;
+  padding-top: 40px;
+}
+#DemoBar.demo-bar .demo-btns {
+  border-top: 1px solid #41414d;
+  padding-top: 30px;
+}
+#DemoBar.demo-bar .responsive-icons a span.fa {
+  font-size: 26px;
+}
+#DemoBar.demo-bar .no-margin-bottom{
+  margin-bottom:0;
+}
+
+.pull-right {
+  float: right;
+  position: fixed;
+  right: 0px;
+  top: 70px;
+  width: 90px;
+  z-index: 99999;
+  text-align: center;
+}
+.toggle-right-sidebar span {
+    background: #0D1326;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #e6ebff;
+    border-radius: 50px;
+    font-size: 26px;
+    cursor: pointer;
+    opacity: .5;
+}
+#right-sidebar {
+  width: 90px;
+  position: fixed;
+  height: 100%;
+  z-index: 1000;
+  right: 0px;
+  top: 0;
+  margin-top: 60px;
+  transition: all .5s ease-in-out;
+  overflow-y: auto;
+}
+.hide-right-bar-notifications {
+  margin-right: -300px !important;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+  </style>
+  <div class="pull-right toggle-right-sidebar">
+    <span class="fa title-open-right-sidebar tooltipstered fa-angle-double-right"></span>
+  </div>
+    
+  <div id="right-sidebar" class="right-sidebar-notifcations nav-collapse">
+    <div class="bs-example bs-example-tabs right-sidebar-tab-notification" data-example-id="togglable-tabs">
+    
+        <div id="DemoBar" class="demo-bar">
+            <div class="demo-btns">
+            <a href="">
+                <span class="w3l-icon -back">
+                    <span class="fa fa-arrow-left"></span>
+                </span>
+                <span class="text">Back</span>
+            </a>
+            <a href="">
+                <span class="w3l-icon -download">
+                    <span class="fa fa-download"></span>
+                </span>
+                <span class="text">Download</span>
+            </a>
+            <a href="" class="no-margin-bottom-mobile">
+                <span class="w3l-icon -buy">
+                    <span class="fa fa-shopping-cart"></span>
+                </span>
+                <span class="text">Buy</span>
+            </a>
+        </div>
+        </div>
+        <div class="right-sidebar-panel-content animated fadeInRight" tabindex="5003"
+            style="overflow: hidden; outline: none;">
+        </div>
+    </div>
+    <a href="#" class="backToTop cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out">
+      <i class="fa fa-arrow-up"></i>
+    </a>
+  </div>
+  </div>
+    <!-- New toolbar -->
+    <header id="site-header" class="header">
+      <div class="container">
+        <div class="header-content">
+          <h1>
+            <a class="navbar-brand" href="index.html">Pooch Care</a>
+          </h1>
+          <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse"
+                data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                </span>
+            </button>
+          <nav class="collapse nav-bar" id="#navbarTogglerDemo02">
+            <ul class="navbar-nav">
+              <li class="nav-item ">
+                <a href="index.html" class="nav-link">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item active ">
+                <a href="about.html" class="nav-link">
+                  About
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a href="services.html" class="nav-link">
+                  Services
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a href="#" class="nav-link">
+                  Gallery
+                </a>
+              </li>
+              <li class="nav-item">
+                <a onclick="dropDown()" href="#" class="nav-link dropdown" >
+                  Blog
+                  <span class="fa fa-angle-down"></span>
+                </a>
+                <div id="navbarDropdown1" class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                  <a href="#" class="dropdown-item">Blog Posts</a>
+                  <a href="#" class="dropdown-item">Blog single</a>
+                  <a href="#" class="dropdown-item">Landing Page</a>
+                </div>
+              </li>
+              <li class="nav-item ">
+                <a href="#" class="nav-link">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="mobile-position">
+            <nav class="navgitation">
+              <div class="theme-switch-wrapper">
+                <label for="checkbox" class="theme-switch">
+                  <input type="checkbox" id="checkbox">
+                  <div class="mode-container">
+                    <i class="fa-regular fa-sun"></i>
+                    <i class="fa-regular fa-moon"></i>
+                  </div>
+                </label>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+  <section class="aboutUs-page">
+      <div class="aboutUs-page-bg">
+          <div class="container">
+              <h2 class="title">About Us</h2>
+              <ul class="nav-title">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li class="active">
+                    <span class="fa fa-arrow-right" aria-hidden="true"></span>
+                    About
+                </li>
+              </ul>
+          </div>
+      </div>
+  </section>
+  <section class="introduce">
+      <div class="container">
+          <div class="row">
+              <div class="col-left">
+                <div class="title-content">
+                    <h6 class="title">About Us</h6>
+                    <h3 class="nav-title">We have 10+ years of experience.</h3>
+                </div>
+                <h4>Let Us Take Care Of Your Pets!</h4>
+              </div>
+              <div class="col-right">
+                <p>Lorem ipsum dolor sit amet,Ea consequuntur .Ea consequuntur illum facere aperiam sequi optio
+                    consectetur adipisicing elitFuga, suscipit totam animi consequatur saepe blanditiis</p>
+                <p class="comment">
+                    Lorem ipsum dolor sit amet,Ea consequuntur illum
+            facere aperiam sequi optio consectetur adipisicing elit. Fuga, suscipit totam animi
+            consequatur saepe blanditiis.
+                </p>
+                <a href="service.html" class="read">Read more</a>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section class="history">
+    <div class="container">
+      <div class="history-content">
+        <h4 class="title">Our history of Pooch Care</h4>
+        <h3 class="nav-title">Our history</h3>
+        <p class="comment">Lorem ipsum dolor sit amet,Ea consequuntur .Ea consequuntur illum facere aperiam
+          sequi optio consectetur adipisicing elitFuga, suscipit totam animi consequatur saepe
+          blanditiis.Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio
+          consectetur adipisicing elit.</p>
+          <div class="history-year">
+            <div class="item">
+              <h5 class="year">2017</h5>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="item">
+              <h5 class="year">2018</h5>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="item">
+              <h5 class="year">2019</h5>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="item">
+              <h5 class="year">2020</h5>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <section class="whoWeAre">
+    <div class="container">
+      <div class="whoWeAre-content">
+        <div class="row">
+          <div class="col-left">
+            <h6 class="title">Who we are</h6>
+            <h3 class="nav-title">Why Choose Us</h3>
+            <p class="comment"> Phasellus lacinia id erat eu
+              ullamcorper. Nunc id ipsum fringilla, gravida felis vitae. Phasellus lacinia id, sunt in
+              culpa quis. Phasellus lacinia</p>
+            <img src="./images/banner3.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="col-right">
+            <div class="row-right">
+              <div class="col-right-icon">
+                <div class="icon">
+                  <span class="fa fa-american-sign-language-interpreting"></span>
+                </div>
+              </div>
+              <div class="col-right-content">
+                <h6>
+                  <a href="#">Care Advices</a>
+                </h6>
+                <p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio
+                  consectetur
+                  adipisicing elit.</p>
+              </div>
+            </div>
+            <div class="row-right">
+              <div class="col-right-icon">
+                <div class="icon">
+                  <span class="fa fa-question-circle"></span>
+                </div>
+              </div>
+              <div class="col-right-content">
+                <h6>
+                  <a href="#">Emergency Services</a>
+                </h6>
+                <p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio
+                  consectetur
+                  adipisicing elit.</p>
+              </div>
+            </div>
+            <div class="row-right">
+              <div class="col-right-icon">
+                <div class="icon">
+                  <span class="fa fa-headphones"></span>
+                </div>
+              </div>
+              <div class="col-right-content">
+                <h6>
+                  <a href="#">Customer Supports</a>
+                </h6>
+                <p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio
+                  consectetur
+                  adipisicing elit.</p>
+              </div>
+            </div>
+            <div class="row-right">
+              <div class="col-right-icon">
+                <div class="icon">
+                  <span class="fa fa-user-md"></span>
+                </div>
+              </div>
+              <div class="col-right-content">
+                <h6>
+                  <a href="#">Veterinary Help</a>
+                </h6>
+                <p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio
+                  consectetur
+                  adipisicing elit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="experts">
+    <div class="container">
+      <div class="experts-content">
+        <h6 class="title">Our Experts</h6>
+        <h3 class="nav-title">Our Team</h3>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="info">
+            <div class="info-header">
+              <a href="#">
+                <img class="img-fluid" src="./images/team1.jpg" alt="">
+              </a>
+            </div>
+            <div class="info-content">
+              <h3 class="name">
+                <a href="#">Micheal Wagou</a>
+              </h3>
+              <p>Training</p>
+              <div class="social">
+                <div class="social-icon">
+                  <a href="#">
+                    <span class="fa fa-facebook" aria-hidden="true"></span>
+                  </a>
+                  <a href="#">
+                    <span class="fa fa-twitter" aria-hidden="true"></span>
+                  </a>
+                  <a href="#">
+                    <span class="fa fa-linkedin" aria-hidden="true"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="info">
+            <div class="info-header">
+              <a href="#">
+                <img class="img-fluid" src="./images/team2.jpg" alt="">
+              </a>
+            </div>
+            <div class="info-content">
+              <h3 class="name">
+                <a href="#">Alex Mitchell</a>
+              </h3>
+              <p>Boarding</p>
+              <div class="social">
+                <div class="social-icon">
+                  <a href="#">
+                    <span class="fa fa-facebook" aria-hidden="true"></span>
+                  </a>
+                  <a href="#">
+                    <span class="fa fa-twitter" aria-hidden="true"></span>
+                  </a>
+                  <a href="#">
+                    <span class="fa fa-linkedin" aria-hidden="true"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="info">
+            <div class="info-header">
+              <a href="#">
+                <img class="img-fluid" src="./images/team3.jpg" alt="">
+              </a>
+            </div>
+            <div class="info-content">
+              <h3 class="name">
+                <a href="#">Scott Colon</a>
+              </h3>
+              <p>Grooming</p>
+              <div class="social">
+                <div class="social-icon">
+                  <a href="#">
+                    <span class="fa fa-facebook" aria-hidden="true"></span>
+                  </a>
+                  <a href="#">
+                    <span class="fa fa-twitter" aria-hidden="true"></span>
+                  </a>
+                  <a href="#">
+                    <span class="fa fa-linkedin" aria-hidden="true"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="info">
+            <div class="info-header">
+              <a href="#">
+                <img class="img-fluid" src="./images/team4.jpg" alt="">
+              </a>
+            </div>
+            <div class="info-content">
+              <h3 class="name">
+                <a href="#">John Harris</a>
+              </h3>
+              <p>Doggie Day Care</p>
+              <div class="social">
+                <div class="social-icon">
+                  <a href="#">
+                    <span class="fa fa-facebook" aria-hidden="true"></span>
+                  </a>
+                  <a href="#">
+                    <span class="fa fa-twitter" aria-hidden="true"></span>
+                  </a>
+                  <a href="#">
+                    <span class="fa fa-linkedin" aria-hidden="true"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h6 class="footer-title">Contact information</h6>
+            <ul>
+              <li>
+                <p>
+                  <strong>Address</strong> : #135 block, Barnard St. Brooklyn, London 10036, UK
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Phone</strong> : <a href="#">+(12)234-11-24</a>                
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Email</strong> : <a href="mailto:example@gmail.com">example@mail.com</a>
+                </p>
+              </li>
+            </ul>
+            <div class="social-footer">
+              <ul class="social-icons">
+                <li class="icons">
+                  <a href="#" title="Facebook">
+                    <span class="fa fa-facebook" aria-hidden="true"></span>
+                  </a>
+                </li>
+                <li class="icons">
+                  <a href="#" title="Twitter">
+                    <span class="fa fa-twitter" aria-hidden="true"></span>
+                  </a>
+                </li>
+                <li class="icons">
+                  <a href="#" title="Dribbble">
+                    <span class="fa fa-dribbble" aria-hidden="true"></span>
+                  </a>
+                </li>
+                <li class="icons">
+                  <a href="#" title="Google">
+                    <span class="fa fa-google" aria-hidden="true"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <div class="right-row">
+              <div class="right-col">
+                <h6 class="footer-title">Company</h6>
+                <ul>
+                  <li>
+                    <a href="about.html">About Us</a>
+                  </li>
+                  <li>
+                    <a href="#">Blog Posts</a>
+                  </li>
+                  <li>
+                    <a href="#">Services</a>
+                  </li>
+                  <li>
+                    <a href="#">Pricing</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="right-col">
+                <h6 class="footer-title">Quick Links</h6>
+                <ul>
+                  <li>
+                    <a href="#">Contact Us</a>
+                  </li>
+                  <li>
+                    <a href="#">Create account</a>
+                  </li>
+                  <li>
+                    <a href="#">Care Center</a>
+                  </li>
+                  <li>
+                    <a href="#">Site Feedack</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="right-col">
+                <h6 class="footer-title">Support</h6>
+                <ul>
+                  <li>
+                    <a href="#">All Dogs</a>
+                  </li>
+                  <li>
+                    <a href="#">Care Advices</a>
+                  </li>
+                  <li>
+                    <a href="#">Care Support</a>
+                  </li>
+                  <li>
+                    <a href="#">Veterinary Help</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-footer">
+        <div class="container">
+          <p class="copyright">
+            © 2022 Pooch Care. All Rights Reserved. Design by <a href="#">Loui$</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./js/theme-change.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script>
+    
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+      });
+    });
+  
+  </script>
+
+  <!-- disable body scroll which navbar is in active -->
+<script>
+  $(function () {
+    $('.navbar-toggler').click(function () {
+      $('body').toggleClass('noscroll');
+    })
+  });
+</script>
+<!-- disable body scroll which navbar is in active -->
+<script src="./js/collapse.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/dropdown.js"></script>
+<script src="./js/util.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/owl.carousel.js"></script>
+</body>
+</html>
